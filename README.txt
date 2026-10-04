@@ -1,4 +1,4 @@
-SCENTED WEBSITE - ROUGH DRAFT
+SCENTED WEBSITE PROJECT
 
 Student: Broedy Godfrey
 Date: September 22, 2026
