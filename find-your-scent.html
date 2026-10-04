@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Author: Broedy Godfrey -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Answer four simple questions to find a cologne that matches your preferences.">
+  <title>Scented | Find Your Scent</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Internal CSS: gives the quiz page its centered Figma layout. */
+    .quiz-page .page-intro { margin-bottom: 38px; }
+  </style>
+</head>
+<body class="quiz-page">
+  <header class="site-header">
+    <a class="brand" href="index.html">SCENTED</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="fragrance-guide.html">Fragrance Guide</a>
+      <a href="recommendations.html">Recommendations</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="find-your-scent.html" aria-current="page">Find Your Scent</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <header class="page-intro">
+      <h1>Find Your Scent</h1>
+      <p>Tell us what you're looking for and find a fragrance that matches your preferences.</p>
+    </header>
+
+    <form id="scent-quiz" class="quiz-panel">
+      <fieldset class="question-group">
+        <legend>1. What type of scents do you prefer?</legend>
+        <div class="option-row">
+          <label><input type="radio" name="scent" value="fresh"> Fresh</label>
+          <label><input type="radio" name="scent" value="sweet"> Sweet</label>
+          <label><input type="radio" name="scent" value="woody"> Woody</label>
+          <label><input type="radio" name="scent" value="spicy"> Spicy</label>
+          <label><input type="radio" name="scent" value="citrus"> Citrus</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="question-group">
+        <legend>2. What is your budget?</legend>
+        <div class="option-row">
+          <label><input type="radio" name="budget" value="under-50"> Under $50</label>
+          <label><input type="radio" name="budget" value="50-100"> $50-$100</label>
+          <label><input type="radio" name="budget" value="100-150"> $100-$150</label>
+          <label><input type="radio" name="budget" value="150-plus"> $150+</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="question-group">
+        <legend>3. What occasion are you shopping for?</legend>
+        <div class="option-row">
+          <label><input type="radio" name="occasion" value="everyday"> Everyday</label>
+          <label><input type="radio" name="occasion" value="work"> Work</label>
+          <label><input type="radio" name="occasion" value="date-night"> Date Night</label>
+          <label><input type="radio" name="occasion" value="special"> Special Occasion</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="question-group">
+        <legend>4. What season will you wear it most?</legend>
+        <div class="option-row">
+          <label><input type="radio" name="season" value="spring"> Spring</label>
+          <label><input type="radio" name="season" value="summer"> Summer</label>
+          <label><input type="radio" name="season" value="fall"> Fall</label>
+          <label><input type="radio" name="season" value="winter"> Winter</label>
+        </div>
+      </fieldset>
+
+      <div class="quiz-actions">
+        <button class="button" type="submit" style="min-width: 170px;">Find My Scent</button>
+        <p id="quiz-result" class="quiz-result" aria-live="polite"></p>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">Scented - Fragrance guidance made simple.</footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

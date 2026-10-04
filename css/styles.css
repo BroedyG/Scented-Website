@@ -1,0 +1,388 @@
+:root {
+  --ink: #171717;
+  --paper: #f7f3ed;
+  --card: #ffffff;
+  --line: #d7d2ca;
+  --muted: #5b5955;
+  --button: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: #202020;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  width: min(1180px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: 30px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.brand {
+  font-size: 1.65rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.04em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(18px, 3.2vw, 54px);
+}
+
+.site-nav a {
+  position: relative;
+  padding: 7px 0;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: #6a4d24;
+}
+
+.site-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--ink);
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: 42px 0 88px;
+}
+
+.page-intro {
+  margin-bottom: 54px;
+}
+
+.page-intro h1,
+.section-heading {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 4vw, 2.55rem);
+  letter-spacing: -0.04em;
+}
+
+.page-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 64px;
+  padding: 28px 0 48px;
+}
+
+.hero-copy h1 {
+  margin: 0 0 28px;
+  font-size: clamp(2.55rem, 5vw, 4.2rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.hero-copy p {
+  max-width: 540px;
+  margin: 0 0 30px;
+  font-size: 1.1rem;
+  line-height: 1.45;
+}
+
+.button {
+  display: inline-block;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 20px;
+  background: var(--button);
+  color: #fff;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #151515;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.home-section {
+  padding-top: 16px;
+}
+
+.home-section h2 {
+  margin: 0 0 30px;
+  font-size: 1.6rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.info-card,
+.guide-card,
+.recommendation-card,
+.review-card,
+.quiz-panel {
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+.info-card {
+  min-height: 165px;
+  padding: 26px;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.info-card:hover,
+.info-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgb(35 27 18 / 10%);
+}
+
+.info-card h3,
+.guide-card h2 {
+  margin: 0 0 12px;
+  font-size: 1.13rem;
+}
+
+.info-card p,
+.guide-card p,
+.recommendation-card p,
+.review-card p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 84px min(24vw, 310px);
+  max-width: 900px;
+}
+
+.guide-card {
+  min-height: 145px;
+  padding: 24px;
+  text-align: center;
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 46px;
+}
+
+.recommendation-card {
+  min-height: 180px;
+  padding: 20px;
+  text-align: center;
+}
+
+.bottle-icon {
+  width: 34px;
+  height: 64px;
+  margin: 0 auto 10px;
+  border: 2px solid rgb(0 0 0 / 20%);
+  border-radius: 5px 5px 8px 8px;
+  box-shadow: inset 0 0 14px rgb(255 255 255 / 24%);
+}
+
+.bottle-icon::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 9px;
+  margin: -11px auto 0;
+  border-radius: 2px 2px 0 0;
+  background: #4a4a4a;
+}
+
+.recommendation-card h2 {
+  margin: 9px 0 2px;
+  font-size: 1.08rem;
+}
+
+.recommendation-card .product-name {
+  font-size: 1rem;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 52px;
+}
+
+.review-card {
+  min-height: 190px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 1fr 64px;
+  align-items: center;
+  gap: 18px;
+}
+
+.review-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.review-card p {
+  margin: 3px 0;
+}
+
+.review-card .bottle-icon {
+  margin: 0 auto;
+}
+
+.quiz-panel {
+  width: min(680px, 100%);
+  margin: 0 auto;
+  padding: 28px 34px 24px;
+}
+
+.question-group {
+  margin: 0;
+  padding: 0 0 22px;
+  border: 0;
+  border-bottom: 1px solid #e5e1db;
+}
+
+.question-group + .question-group {
+  padding-top: 22px;
+}
+
+.question-group legend {
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.option-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 38px;
+}
+
+.option-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.quiz-actions {
+  padding-top: 26px;
+  text-align: center;
+}
+
+.quiz-result {
+  display: none;
+  margin: 22px 0 0;
+  padding: 15px;
+  border-left: 4px solid #8a6735;
+  background: #f4eee4;
+  text-align: left;
+  line-height: 1.45;
+}
+
+.quiz-result.show {
+  display: block;
+}
+
+.site-footer {
+  width: min(1180px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: 20px 0 30px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 780px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+    gap: 10px 22px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .card-grid,
+  .recommendation-grid,
+  .review-grid,
+  .guide-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .guide-grid {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header,
+  .page-shell,
+  .site-footer {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .page-shell {
+    padding-top: 24px;
+  }
+
+  .quiz-panel {
+    padding: 22px 18px;
+  }
+
+  .option-row {
+    flex-direction: column;
+  }
+}
